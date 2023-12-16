@@ -25,11 +25,10 @@ import { useUserContext } from "@/context/AuthContext";
 const SignUp = () => {
   const { toast } = useToast();
   const navigate = useNavigate();
-  const { mutateAsync: createUserAccount, isPending: isCreatingAccount } =
+  const { mutateAsync: signUp, isPending: isCreatingAccount } =
     useCreateUserAccount();
 
-  const { mutateAsync: signInAccount, isPending: isSigningIn } =
-    useSignInAccount();
+  const { mutateAsync: signIn, isPending: isSigningIn } = useSignInAccount();
   const { checkAuthUser, isLoading: isUserLoading } = useUserContext();
 
   const form = useForm<z.infer<typeof SignupValidation>>({
@@ -43,7 +42,7 @@ const SignUp = () => {
   });
 
   async function onSubmit(values: z.infer<typeof SignupValidation>) {
-    const newUser = await createUserAccount(values);
+    const newUser = await signUp(values);
 
     if (!newUser) {
       return toast({
@@ -51,7 +50,7 @@ const SignUp = () => {
       });
     }
 
-    const session = await signInAccount({
+    const session = await signIn({
       email: values.email,
       password: values.password,
     });
