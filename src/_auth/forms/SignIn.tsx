@@ -40,9 +40,12 @@ const SigninForm = () => {
 
   const handleSignin = async (user: z.infer<typeof SigninValidation>) => {
     const session = await signIn(user);
+    console.log(session);
 
     if (!session) {
-      toast({ title: "Login failed. Please try again." });
+      toast({
+        title: "Invalid credentials. Please check the email and password.",
+      });
 
       return;
     }
