@@ -20,7 +20,7 @@ import { SigninValidation } from "@/lib/validation";
 
 import { useUserContext } from "@/context/AuthContext";
 import { useSignInAccount } from "@/lib/react-query/queriesAndMutations";
-import Loader from "@/components/ui/shared/Loader";
+import Loader from "@/components/shared/Loader";
 
 const SigninForm = () => {
   const { toast } = useToast();
