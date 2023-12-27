@@ -276,6 +276,7 @@ export async function getPostById(postId?: string) {
 // ============================== UPDATE POST
 export async function updatePost(post: IUpdatePost) {
   const hasFileToUpdate = post.file.length > 0;
+  console.log(post);
 
   try {
     let image = {
