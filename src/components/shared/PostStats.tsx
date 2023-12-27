@@ -61,7 +61,7 @@ const PostStats = ({ post, userId }: PostStatsProps) => {
     savePost({ userId: userId, postId: post.$id });
     setIsSaved(true);
   };
-  console.log(currentUser);
+
   return (
     <div className={`flex justify-between items-center z-20 `}>
       <div className="flex gap-2 mr-5">
