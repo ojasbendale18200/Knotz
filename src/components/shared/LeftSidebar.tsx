@@ -32,6 +32,7 @@ const LeftSidebar = () => {
             alt="logo"
             width={170}
             height={36}
+            className="ml-8"
           />
         </Link>
 
