@@ -2,6 +2,7 @@ import { INewPost, INewUser, IUpdatePost, IUpdateUser } from "@/types";
 import { account, appwriteConfig, avatars, databases, storage } from "./config";
 import { ID, Query } from "appwrite";
 
+// ============================== LOGIN/REGISTER
 export async function createUserAccount(user: INewUser) {
   try {
     const newAcc = await account.create(

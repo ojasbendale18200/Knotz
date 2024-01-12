@@ -1,6 +1,7 @@
+import { useUserContext } from "@/context/AuthContext";
 import { Outlet, Navigate } from "react-router-dom";
 const AuthLayout = () => {
-  const isAuthenticated = false;
+  const { isAuthenticated } = useUserContext();
   return (
     <>
       {isAuthenticated ? (
@@ -13,7 +14,7 @@ const AuthLayout = () => {
 
           <img
             src="/assets/images/side-img.svg"
-            alt="logo"
+            alt="connecting"
             className="hidden xl:block h-screen w-1/2 object-cover bg-repeat"
           />
         </>
