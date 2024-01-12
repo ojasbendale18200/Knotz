@@ -28,8 +28,8 @@ const SignUp = () => {
   const { mutateAsync: signUp, isPending: isCreatingAccount } =
     useCreateUserAccount();
 
-  const { mutateAsync: signIn, isPending: isSigningIn } = useSignInAccount();
-  const { checkAuthUser, isLoading: isUserLoading } = useUserContext();
+  const { mutateAsync: signIn } = useSignInAccount();
+  const { checkAuthUser } = useUserContext();
 
   const form = useForm<z.infer<typeof SignupValidation>>({
     resolver: zodResolver(SignupValidation),

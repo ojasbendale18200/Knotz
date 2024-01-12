@@ -11,13 +11,11 @@ const Home = () => {
   const {
     data: posts,
     isPending: isPostLoading,
-    isError: isErrorPosts,
   } = useGetRecentPosts();
 
   const {
     data: creators,
     isLoading: isUserLoading,
-    isError: isErrorCreators,
   } = useGetUsers(10);
   return (
     <div className="flex flex-1">
